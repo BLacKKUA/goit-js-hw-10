@@ -20,14 +20,15 @@ refs.inputValue.addEventListener('input', debounce(event => {
       refs.countryList.innerHTML = ""
       return;
    }
+
    fetchCountries(country).then(country => {
       if(country.length > 1 && country.length <= 10){
          refs.countryList.innerHTML = buildListCountry(country)
       } else if (country.length == 1) {
          refs.countryList.innerHTML = buildCountryTempl(country)
-      }
-      else if (country.length > 10) {
+      } else if (country.length > 10) {
          return Notify.info("Too many matches found. Please enter a more specific name.")
       }
+
       }).catch(error => Notify.failure("Oops, there is no country with that name"))
 },DEBOUNCE_DELAY))
