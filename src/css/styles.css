@@ -17,4 +17,19 @@ body {
   padding: 8px;
   max-width: 320px;
   margin-bottom: 16px;
+  flex-direction: row;
+}
+.styleForCoutryList {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  font-weight: 700;
+  margin: 10px;
+}
+.styleForCoutryList > img {
+  margin: 0 10px 0 0;
 }
