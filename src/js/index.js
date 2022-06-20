@@ -13,7 +13,6 @@ const refs = {
    countryInfo: document.querySelector('.country-info')
 }
 
-
 refs.inputValue.addEventListener('input', debounce(event => {
    const country = refs.inputValue.value.trim()
    if (country === '') {
