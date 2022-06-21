@@ -26,8 +26,14 @@ refs.inputValue.addEventListener('input', debounce(event => {
       } else if (country.length == 1) {
          refs.countryList.innerHTML = buildCountryTempl(country)
       } else if (country.length > 10) {
-         return Notify.info("Too many matches found. Please enter a more specific name.")
+         Notify.info("Too many matches found. Please enter a more specific name.")
+         refs.countryList.innerHTML = ""
+         return
       }
 
-      }).catch(error => Notify.failure("Oops, there is no country with that name"))
+   }).catch(error => {
+      Notify.failure("Oops, there is no country with that name")
+      refs.countryList.innerHTML = ""
+      return
+   })
 },DEBOUNCE_DELAY))
